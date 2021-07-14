@@ -30,6 +30,19 @@ def index(req):
 
 
 # Actualizar tarea
-def ActualizarTarea(req, id):
+def actualizarTarea(req, id):
     tarea = Tarea.objects.get(id=id)
-    return render(req, 'tareas/actualizar_tarea.html')
+    
+    form = TareaForm(instance=tarea)
+    
+    
+    if req.method == 'POST':
+        form = TareaForm(req.POST, instance=tarea)
+        
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        
+        
+    contexto = {'form': form}
+    return render(req, 'tareas/actualizar_tarea.html', contexto)

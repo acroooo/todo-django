@@ -8,13 +8,16 @@
 </head>
 <body>
     <h1>To do</h1>
-    <form method="post" action="/">
+    <form method="POST" action="/">
     {% csrf_token %}
     {{form.titulo}}
         <input type="submit" name="Crear Tarea">
     </form>
     {% for tarea in tareas %}
-    <p>{{tarea}}</p>
+    <div>
+        <a href="{% url 'actualizar' tarea.id %}">actualizar</a>
+        <p>{{tarea}}</p>
+    </div>
     {%endfor%}
 </body>
 </html>

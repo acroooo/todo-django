@@ -8,7 +8,10 @@
 </head>
 <body>
     <h3>Actualizar tarea</h3>
-    <form>
+    <form method="POST" action="">
+    {% csrf_token %}
+
+    {{form}}
         <input type="submit" name="Actualizar tarea">
     </form>
 </body>
