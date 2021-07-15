@@ -8,13 +8,19 @@
     <title>To Do App</title>
     <link rel="stylesheet" href="{% static "css/tailwind-output.css" %}">
 </head>
-<body class="container mx-auto">
-    <h1 class="text-white">To do</h1>
-    <form method="POST" action="/">
-    {% csrf_token %}
-    {{form.titulo}}
-        <input type="submit" name="Crear Tarea">
-    </form>
+<body class="container bg-gray-50">
+    <div class="grid grid-cols-1 grid-rows-3">
+
+    <div>
+        <h1 class="text">To do</h1>
+    </div>
+    <div>
+        <form method="POST" action="/">
+            {% csrf_token %}
+            {{form.titulo}}
+            <input type="submit" name="Crear Tarea">
+        </form>
+    </div>
     {% for tarea in tareas %}
     <div>
         <a href="{% url 'actualizar' tarea.id %}">actualizar</a>
@@ -28,5 +34,6 @@
 
     </div>
     {%endfor%}
+    </div>
 </body>
 </html>
