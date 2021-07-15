@@ -1,3 +1,8 @@
 <p>¿Estás seguro de eliminar la tarea "{{item}}"?</p>
 
-<a href="{{% url 'index'}}">Cancel</a>
+<a href="{% url 'index' %}">Cancel</a>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    <input type="submit" name="Confirmar">
+</form>

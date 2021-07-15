@@ -16,7 +16,14 @@
     {% for tarea in tareas %}
     <div>
         <a href="{% url 'actualizar' tarea.id %}">actualizar</a>
-        <p>{{tarea}}</p>
+        <a href="{% url 'eliminar' tarea.id %}">eliminar</a>
+        
+        {% if tarea.completado == True %}
+        <strike>{{tarea}}</strike>
+        {% else %}
+        <span>{{tarea}}</span>
+        {% endif %}
+        
     </div>
     {%endfor%}
 </body>

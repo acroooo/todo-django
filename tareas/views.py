@@ -28,6 +28,19 @@ def index(req):
     # render
     return render(req, 'tareas/lista.html', contexto)
 
+# Eliminar tarea
+def eliminarTarea(req, id):
+    item = Tarea.objects.get(id=id)
+    
+    if req.method == 'POST':
+        item.delete()
+        return redirect('/')
+    
+    contexto = {
+        'item': item,
+    }
+    
+    return render(req, 'tareas/eliminar_tarea.html', contexto)
 
 # Actualizar tarea
 def actualizarTarea(req, id):
