@@ -13,6 +13,7 @@ def index(req):
     form = TareaForm()
     
     # request
+    print(req)
     if req.method == 'POST':
         form = TareaForm(req.POST)
         if form.is_valid():

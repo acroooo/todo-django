@@ -1,8 +1,39 @@
+{% extends 'base.html'%} {% load static %} {% block content %}
+<h3 class="mt-5 text-2xl">Eliminar tarea</h3>
 <p>¿Estás seguro de eliminar la tarea "{{item}}"?</p>
 
-<a href="{% url 'index' %}">Cancel</a>
-
-<form method="POST" action="">
-    {% csrf_token %}
-    <input type="submit" name="Confirmar">
+<form method="POST" action="" class="mt-5">
+  {% csrf_token %}
+  <input
+    class="
+      shadow
+      appearance-none
+      border
+      rounded
+      w-full
+      py-2
+      px-3
+      my-4
+      text-grey-darker
+    "
+    type="submit"
+    value="Confirmar"
+  />
 </form>
+
+<a
+  class="
+    shadow
+    appearance-none
+    border
+    rounded
+    w-full
+    py-2
+    px-3
+    my-4
+    text-grey-darker
+  "
+  href="{% url 'index' %}"
+  >Cancelar</a
+>
+{% endblock %}

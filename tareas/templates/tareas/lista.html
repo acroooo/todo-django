@@ -1,39 +1,99 @@
-<!DOCTYPE html>
-<html lang="es">
-{% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do App</title>
-    <link rel="stylesheet" href="{% static "css/tailwind-output.css" %}">
-</head>
-<body class="container bg-gray-50">
-    <div class="grid grid-cols-1 grid-rows-3">
+{% extends 'base.html'%} {% load static %} {% block content %}
 
-    <div>
-        <h1 class="text">To do</h1>
+<div class="mt-4">
+  <form method="POST" action="/" class="flex justify-between mb-5">
+    {% csrf_token %}
+    <div
+      class="
+        shadow
+        border border-black
+        rounded
+        w-full
+        py-2
+        px-3
+        my-4
+        mr-3
+        text-grey-darker
+      "
+    >
+      {{form.titulo}}
     </div>
-    <div>
-        <form method="POST" action="/">
-            {% csrf_token %}
-            {{form.titulo}}
-            <input type="submit" name="Crear Tarea">
-        </form>
-    </div>
-    {% for tarea in tareas %}
-    <div>
-        <a href="{% url 'actualizar' tarea.id %}">actualizar</a>
-        <a href="{% url 'eliminar' tarea.id %}">eliminar</a>
-        
-        {% if tarea.completado == True %}
-        <strike>{{tarea}}</strike>
-        {% else %}
-        <span>{{tarea}}</span>
-        {% endif %}
+    <input
+      type="submit"
+      class="
+        shadow
+        appearance-none
+        border
+        rounded
+        w-25
+        py-2
+        px-3
+        my-4
+        text-grey-darker
+      "
+      value="Añadir"
+    />
+  </form>
+</div>
+<div class="flex flex-col">
+  {% for tarea in tareas %}
+  <div class="flex mb-4 items-center">
+    <a href="{% url 'actualizar' tarea.id %}"
+      ><button
+        class="
+          px-4
+          py-2
+          font-medium
+          tracking-wide
+          text-white
+          capitalize
+          transition-colors
+          duration-200
+          transform
+          bg-blue-600
+          rounded-md
+          dark:bg-gray-800
+          hover:bg-blue-500
+          dark:hover:bg-gray-700
+          focus:outline-none focus:bg-blue-500
+          dark:focus:bg-gray-700
+        "
+      >
+        actualizar
+      </button></a
+    >
+    <a href="{% url 'eliminar' tarea.id %}"
+      ><button
+        class="
+          px-4
+          py-2
+          ml-4
+          font-medium
+          tracking-wide
+          text-white
+          capitalize
+          transition-colors
+          duration-200
+          transform
+          bg-blue-600
+          rounded-md
+          dark:bg-gray-800
+          hover:bg-blue-500
+          dark:hover:bg-gray-700
+          focus:outline-none focus:bg-blue-500
+          dark:focus:bg-gray-700
+        "
+      >
+        eliminar
+      </button></a
+    >
 
-    </div>
-    {%endfor%}
-    </div>
-</body>
-</html>
+    {% if tarea.completado == True %}
+    <strike class="w-full text-grey-darkest text-right">{{tarea}}</strike>
+    {% else %}
+    <span class="w-full text-grey-darkest text-right">{{tarea}}</span>
+    {% endif %}
+  </div>
+  {%endfor%}
+</div>
+{% endblock %}

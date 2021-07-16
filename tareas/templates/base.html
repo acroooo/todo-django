@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do App</title>
+    <link rel="stylesheet" href="{% static "css/tailwind-output.css" %}">
+  </head>
+  <body class="bg-gray-50 mt-5">
+    <div
+      class="
+        h-100
+        w-full
+        flex
+        items-center
+        justify-center
+        bg-teal-lightest
+        font-sans
+      "
+    >
+      <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+        <div class="mb-4">
+          <h1 class="text-grey-darkest text-4xl">Lista de To Do's'</h1>
+          {% block content %} {% endblock %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
