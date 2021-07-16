@@ -10,7 +10,7 @@ Operaciones:
 - actualizar estado de la tarea (completado / no completado)
 - visualizar lista de tareas totales
 
-<u>Live:</u> <a href="">Deployed</a>
+<u>Live:</u> <a href="">Deploy [ ACTUALMENTE EN PROCESO ]</a>
 
 <h2>Como probarlo</h2>
 
@@ -23,9 +23,7 @@ python3 manage.py runserver
 para Livereload:
 <br/>
 python3 manage.py livereload
+<br />
+para requerimientos:<br />
+pip install -r requirements.txt
 </code>
-
-<h2>Dependencias</h2>
-Se encuentran en el requirements.txt
-<br>
-<br>
