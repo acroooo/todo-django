@@ -17,6 +17,7 @@ Operaciones:
 Te posicionas en la carpeta donde se encuentre el archivo manage.py.
 
 cd todo-django
+python3 manage.py runserver
 <code>
 *cd todo-django
 *python3 manage.py runserver
