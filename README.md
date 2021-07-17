@@ -15,7 +15,8 @@ Operaciones:
 ## Como probarlo
 
 Te posicionas en la carpeta donde se encuentre el archivo manage.py.
-<br/>
+
+cd todo-django
 <code>
 *cd todo-django
 *python3 manage.py runserver
