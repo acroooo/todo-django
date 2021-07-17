@@ -17,13 +17,13 @@ Operaciones:
 Te posicionas en la carpeta donde se encuentre el archivo manage.py.
 <br/>
 <code>
-<p>cd todo-django</p><br/>
+cd todo-django<br>
 python3 manage.py runserver
 
 para Livereload:
-<br/>
+
 python3 manage.py livereload
-<br />
-para requerimientos:<br />
+
+para requerimientos:
 pip install -r requirements.txt
 </code>
