@@ -17,7 +17,7 @@ Operaciones:
 Te posicionas en la carpeta donde se encuentre el archivo manage.py.
 <br/>
 <code>
-cd todo-django<br/>
+<p>cd todo-django</p><br/>
 python3 manage.py runserver
 
 para Livereload:
