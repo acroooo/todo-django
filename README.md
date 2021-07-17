@@ -21,11 +21,19 @@ Te posicionas en la carpeta donde se encuentre el archivo manage.py.
 <code>
 python3 manage.py runserver
 </code>
+
+
 para Livereload:
+
+
 <code>
-*python3 manage.py livereload
+python3 manage.py livereload
 </code>
-*para requerimientos:
+
+
+para requerimientos:
+
+
 <code>
 *pip install -r requirements.txt
 </code>
